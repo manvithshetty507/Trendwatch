@@ -1,0 +1,11 @@
+# Ignore node_modules, dist, and build in any folder
+**/node_modules/
+**/dist/
+**/build/
+
+# Log files
+*.log
+
+# Environment variable files in any folder
+**/.env*
+
