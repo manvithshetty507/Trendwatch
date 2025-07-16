@@ -3,11 +3,8 @@ require("dotenv").config();
 const axios = require("axios");
 const { sendToKafka } = require("./kafka");
 
-const hnFetcher = require("./fetchers/hnFetcher");
-const devtoFetcher = require("./fetchers/devtoFetcher");
-const techCrunchFetcher = require("./fetchers/techCrunchFetcher");
+const fetchers = require("./fetchers/exportFetchers");
 
-const fetchers = [hnFetcher, devtoFetcher, techCrunchFetcher];
 (async () => {
   try {
     const results = await Promise.all(fetchers.map((fetcher) => fetcher()));
